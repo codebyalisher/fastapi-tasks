@@ -1,6 +1,7 @@
 from typing import Union,Optional,List
 from pydantic import BaseModel
 from fastapi import FastAPI,Query,Depends
+from mongo import users_collection
 
 app = FastAPI()
 
@@ -50,4 +51,7 @@ class CommonParams:
 @app.get('/readitems')
 async def read_items(common:CommonParams=Depends(CommonParams)):
     res={}
-    return common.q+common.skip+common.limit
+    return common.q+common.skip+common.limit 
+
+
+
