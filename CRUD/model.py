@@ -5,7 +5,7 @@ from bson import ObjectId
 
 # Pydantic model for User
 class User(BaseModel):
-    name: str="slidhrt"
+    name: str
     email: str
     password: str
     address: Optional[str] = None
